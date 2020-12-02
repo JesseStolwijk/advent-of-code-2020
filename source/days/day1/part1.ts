@@ -17,10 +17,10 @@ export const runner = async () => {
 const SUM_TO = 2020;
 
 // Ugly O(n) implementation
-const part1 = (numbers: number[]): number => {
-	const [a, b] = findPairThatSumsTo(numbers, SUM_TO)!;
-	return a * b;
-};
+// const part1 = (numbers: number[]): number => {
+// 	const [a, b] = findPairThatSumsTo(numbers, SUM_TO)!;
+// 	return a * b;
+// };
 
 const findPairThatSumsTo = (
 	numbers: number[],
@@ -40,7 +40,7 @@ const findPairThatSumsTo = (
 // O(n^2) -_-
 const part2 = (numbers: number[]): number | undefined => {
 	for (let i = 0; i < numbers.length; i++) {
-		const currentNumber = numbers[i];
+		const currentNumber = numbers[i]!;
 		const maybeResult = findPairThatSumsTo(numbers, SUM_TO - currentNumber);
 
 		if (maybeResult) {
