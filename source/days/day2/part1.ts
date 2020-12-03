@@ -15,6 +15,7 @@ export const runner = async () => {
 		}));
 
 	console.log(part2(input));
+	part1(input);
 };
 
 const part1 = (entries: PasswordEntry[]): number => {
@@ -23,10 +24,7 @@ const part1 = (entries: PasswordEntry[]): number => {
 			.split("")
 			.filter((char) => char === entry.letter).length;
 
-		return (
-			entry.min <= numberOfOccurences &&
-			entry.max >= numberOfOccurences
-		);
+		return entry.min <= numberOfOccurences && entry.max >= numberOfOccurences;
 	}).length;
 };
 
@@ -36,13 +34,11 @@ const part2 = (entries: PasswordEntry[]): number => {
 		const maxLetter = entry.password[entry.max - 1];
 
 		return (
-			(minLetter === entry.letter ||
-				maxLetter === entry.letter) &&
+			(minLetter === entry.letter || maxLetter === entry.letter) &&
 			minLetter !== maxLetter
 		);
 	}).length;
 };
-
 
 interface PasswordEntry {
 	letter: string;

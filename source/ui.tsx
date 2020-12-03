@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { Text, useInput } from "ink";
 import { usePerformanceObserver } from "./benchmark";
-import { runner } from "./days/day2/part1";
+import { runner } from "./days/day3/part1";
 import { exit } from "process";
 import { useTimeout } from "./use-timeout";
 
